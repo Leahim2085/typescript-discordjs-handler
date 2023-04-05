@@ -110,36 +110,4 @@ export default class TestBot extends Client<true> {
   public readonly buttons: Collection<string, Command> = new Collection();
   public readonly selectmenues: Collection<string, Command> = new Collection();
   public readonly embedColor: number = hexToDecimal("#2f3136");
-  public error: (
-    interaction: Interaction | any,
-    description: string,
-    editReply: boolean
-  ) => any = (
-    interaction: Interaction | any,
-    description: string,
-    editReply: boolean
-  ) => {
-    if (editReply) {
-      return interaction.editReply({
-        embeds: [
-          {
-            title: "Ой! Похоже что возникла ошибка...💥",
-            description: description,
-            color: hexToDecimal("#2f3136"),
-          },
-        ],
-      });
-    } else {
-      return interaction.reply({
-        embeds: [
-          {
-            title: "Ой! Похоже что возникла ошибка...💥",
-            description: description,
-            color: hexToDecimal("#2f3136"),
-          },
-        ],
-        ephemeral: true,
-      });
-    }
-  };
 }
