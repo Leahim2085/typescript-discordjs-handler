@@ -5,7 +5,7 @@ import * as path from "path";
 import Command from "./Command";
 import { Log } from "./Log";
 
-export default class ExtremeTypes extends Client<true> {
+export default class TestBot extends Client<true> {
   constructor() {
     super({
       intents: 131071,
