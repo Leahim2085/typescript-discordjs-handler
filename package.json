@@ -1,0 +1,18 @@
+{
+  "name": "testbot",
+  "version": "1.0.0",
+  "description": "Botik na ts",
+  "main": "src/client.ts",
+  "scripts": {
+    "start:dev": "ts-node-dev --respawn --transpile-only ./src/client.ts"
+  },
+  "author": "Leahim#2085 Why not?#2292",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^1.4.0",
+    "discord-embed-colors": "^1.0.3",
+    "discord.js": "^14.7.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  }
+}
