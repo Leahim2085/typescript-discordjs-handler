@@ -1,7 +1,7 @@
-import ExtremeTypes from "./structures/Client";;
+import TestBot from "./structures/Client";;
 import { token } from "./config.json";
 
-const client: ExtremeTypes = new TestBot();
+const client: TestBot = new TestBot();
 
 client.handleInteraction();
 client.handleEvents();
