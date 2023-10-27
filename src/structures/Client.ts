@@ -1,10 +1,10 @@
 import { hexToDecimal } from "discord-embed-colors";
-import { Client, Collection, Interaction, Partials } from "discord.js";
+import { Client, Collection, Partials } from "discord.js";
 import { readdirSync } from "node:fs";
 import * as path from "path";
 import Command from "./Command";
 import { Logger } from "./Log";
-import { ErrorProperties, Error } from "src/utils";
+import { ErrorProperties, Error } from "../utils/";
 
 export default class ExtremeTypes extends Client<true> {
   constructor() {
