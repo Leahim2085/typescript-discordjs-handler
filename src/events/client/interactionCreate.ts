@@ -1,4 +1,4 @@
-import { Interaction } from "discord.js";
+import { Interaction, PermissionsBitField } from "discord.js";
 import ExtremeTypes from "src/structures/Client";
 import Event from "../../structures/Event";
 
@@ -8,6 +8,7 @@ export default class extends Event {
     }
 
     public async run(client: ExtremeTypes, interaction: Interaction) {
+        if(!interaction.guild?.members.cache.get(client.user.id)?.permissions.has(PermissionsBitField.Flags.Administrator)) return client.error({interaction, info: 'Пока у меня нету прав администратора я не открою вам доступ к командам ^-^', editReply: false})
         function handleInteraction(interact: any) {
             if (interact && interact.run) interact.run(client, interaction);
             else {
@@ -22,7 +23,7 @@ export default class extends Event {
 
 function defaultHandler(interaction: any): any {
     return interaction.reply({
-        content: "Простите Леахима, он ещё не сделал эту команду ;<",
+        content: "Простите Вай Нотика, он ещё не сделал эту команду ;<",
         allowedMentions: {
             repliedUser: false
         },
