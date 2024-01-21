@@ -5,7 +5,7 @@ import Command from "../../structures/Command";
 
 export default class extends Command{
     constructor() {
-        super(comamndData);
+        super(commandData);
     }
 
     public async run(client: ExtremeTypes, interaction: ChatInputCommandInteraction) {
@@ -46,11 +46,11 @@ export default class extends Command{
             .setColor(client.embedColor)
 
 
-        interaction.reply({ embeds: [botInfoEmbed], ephemeral: true })
+        await interaction.reply({ embeds: [botInfoEmbed], ephemeral: true })
         await msg.delete();
     }
 }
 
-const comamndData = new SlashCommandBuilder()
+const commandData = new SlashCommandBuilder()
     .setName("bot-info")
     .setDescription('Тех. информация о боте');
