@@ -5,7 +5,7 @@ import Command from "../../structures/Command";
 
 export default class extends Command{
     constructor() {
-        super(comamndData);
+        super(commandData);
     }
 
     public async run(client: ExtremeTypes, interaction: ChatInputCommandInteraction) {
@@ -55,11 +55,11 @@ export default class extends Command{
             .setImage(`${member.user.bannerURL() ? member.user.bannerURL() : "https://i.gifer.com/HJy4.gif"}`)
             .setColor(client.embedColor);
 
-        interaction.reply({ embeds: [userInfoEmbed], ephemeral: true });
+        await interaction.reply({ embeds: [userInfoEmbed], ephemeral: true });
     }
 }
 
-const comamndData = new SlashCommandBuilder()
+const commandData = new SlashCommandBuilder()
     .setName("user-info")
     .setDescription('Информация об участнике сервера')
     .addUserOption(option =>
