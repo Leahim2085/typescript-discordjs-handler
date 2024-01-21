@@ -5,7 +5,7 @@ import Command from "../../structures/Command";
 
 export default class extends Command{
     constructor() {
-        super(comamndData);
+        super(commandData);
     }
 
     public async run(client: ExtremeTypes, interaction: ChatInputCommandInteraction) {
@@ -60,10 +60,10 @@ export default class extends Command{
             .setColor(client.embedColor)
             .setImage(`${interaction.guild?.bannerURL() ? interaction.guild!.bannerURL() : "https://i.gifer.com/HJy4.gif"}`)
 
-        interaction.reply({ embeds: [serverInfoEmbed], ephemeral: true })
+        await interaction.reply({ embeds: [serverInfoEmbed], ephemeral: true })
     }
 }
 
-const comamndData = new SlashCommandBuilder()
+const commandData = new SlashCommandBuilder()
     .setName("server-info")
     .setDescription('Информация о сервере (гильдии)');
