@@ -5,7 +5,7 @@ import Command from "../../structures/Command";
 
 export default class extends Command {
     constructor() {
-        super(comamndData);
+        super(commandData);
     }
 
     public async run(client: ExtremeTypes, interaction: ChatInputCommandInteraction) {
@@ -21,7 +21,7 @@ export default class extends Command {
     }
 }
 
-const comamndData = new SlashCommandBuilder()
+const commandData = new SlashCommandBuilder()
     .setName("avatar")
     .setDescription('Автар участника сервера')
     .addUserOption(option =>
